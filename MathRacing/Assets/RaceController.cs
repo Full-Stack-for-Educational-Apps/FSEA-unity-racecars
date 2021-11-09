@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RaceController : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class RaceController : MonoBehaviour
     public GameObject[] opponentObjects;
     public ParticleSystem particle;
     public GameObject finishLineUI;
+    public GameObject mathUI;
     public PlayerCar playerCar { get; private set; }
     public List<NPCCar> opponentCars { get; private set; }
 
@@ -50,6 +52,7 @@ public class RaceController : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         finishLineUI.GetComponent<Animator>().enabled = true;
+        mathUI.gameObject.SetActive(false);
         yield return new WaitForSeconds(2f);
         playing = false;
     }
