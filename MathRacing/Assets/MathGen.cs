@@ -24,6 +24,8 @@ public class MathGen : MonoBehaviour
         equationBox.GetComponent<Text>().text = "";
         NewEquation();
         enterButton.onClick.AddListener(CheckAnswer);
+        playerInput.GetComponent<InputField>().Select();
+        playerInput.GetComponent<InputField>().ActivateInputField();
     }
     public void NewEquation()
     {
@@ -43,5 +45,7 @@ public class MathGen : MonoBehaviour
             NewEquation();
             rc.playerCar.Boost(rc.carBaseBoost);
         }
+        playerInput.GetComponent<InputField>().Select();
+        playerInput.GetComponent<InputField>().ActivateInputField();
     }
 }

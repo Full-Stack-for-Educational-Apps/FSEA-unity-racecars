@@ -5,7 +5,9 @@ using UnityEngine;
 public interface ICar
 {
     GameObject Go { get; }
-    float BoostSpeed { get; set; }
+    float BoostSpeed { get; }
+    string Name { get; set; }
+
 
     void Boost(float boostAmount);
 }
